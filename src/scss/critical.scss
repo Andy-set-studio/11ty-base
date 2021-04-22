@@ -1,0 +1,66 @@
+// First up: config and functions
+@import 'config';
+
+// Next: pull in gorko for design tokens
+@import '../../node_modules/gorko/gorko.scss';
+
+@import 'reset';
+
+// Global styles start
+:root {
+  --flow-space: #{get-size('600')};
+}
+
+body {
+  background: get-color('light');
+  color: get-color('dark-shade');
+  line-height: 1.5;
+
+  @include apply-utility('font', 'base');
+}
+
+a:not([class]) {
+  color: currentColor;
+}
+
+:focus {
+  outline: 2px dashed get-color('primary');
+  outline-offset: 0.25rem;
+}
+
+main:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 900;
+
+  @include apply-utility('font', 'sans');
+  @include apply-utility('leading', 'flat');
+}
+
+dl {
+  display: grid;
+  grid-template-columns: minmax(0, max-content) 1fr;
+  grid-gap: 0.5rem 1.5rem;
+}
+
+// High contrast selection because it can help visually-impaired
+// folks read the text easier
+::selection {
+  color: get-color('light');
+
+  // We set this as an RGBA because that's how you get a solid color, by using 0.99
+  // alpha value. Browsers are wild.
+  background: rgba(get-color('dark-shade'), 0.99);
+}
+
+// Import blocks
+
+// Import utilities
+@import 'utilities/flow';
+@import 'utilities/visually-hidden';
+@import 'utilities/wrapper';

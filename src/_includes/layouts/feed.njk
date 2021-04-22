@@ -1,0 +1,22 @@
+{% extends "layouts/base.njk" %} 
+
+{% set postListItems = pagination.items %}
+
+{# If this is a tag, grab those items instead as one large collection #}
+{% if tag %}
+  {% set postListItems = collections[tag] %}
+  {% set title = 'Blog posts filed under “' + tag + '”' %}
+{% endif %}
+
+{% block content %}
+  <article>
+    <h2>{{ title }}</h2>
+    {% include "partials/post-list.njk" %}
+
+    {# If we leave pagination in for tags, the next and prev links will
+      link to tags and be rather confusing, so don't render in that situation #}
+    {% if not tag %}
+      {% include "partials/pagination.njk" %}
+    {% endif %}
+  </article>
+{% endblock %}

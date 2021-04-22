@@ -1,0 +1,21 @@
+{% extends "layouts/base.njk" %} 
+
+{% block content %}
+<div class="wrapper flow">
+  <h1>Homepage</h1>
+  <h2>Site info</h2>
+  <dl>
+    <dt>name</dt>
+    <dd>{{ site.name }}</dd>
+    <dt>url</dt>
+    <dd>{{ site.url }}</dd>
+    <dt>authorName (RSS)</dt>
+    <dd>{{ site.authorName }}</dd>
+    <dt>authorEmail (RSS)</dt>
+    <dd>{{ site.authorEmail }}</dd>
+  </dl>
+  <h2>Posts</h2>
+  {% set postListItems = collections.blog %}
+  {% include "partials/post-list.njk" %}
+</div>
+{% endblock %}

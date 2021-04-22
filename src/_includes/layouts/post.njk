@@ -1,0 +1,20 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <article>
+    <div class="[ post ] [ flow wrapper ]">
+      <h1>{{ title }}</h1>
+      <time datetime="{{ date | w3DateFilter }}">{{ date | dateFilter }}</time>
+      {% if tags %}
+        <ul class="tags-list" aria-label="Tags">
+          {% for tag in tags %}
+            <li>
+              <a href="/tag/{{ tag | slug }}/">#{{ tag | replace(' ', '') | capitalize }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {{ content | safe }}
+    </div>
+  </article>
+{% endblock %}

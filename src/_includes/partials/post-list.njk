@@ -1,0 +1,14 @@
+{% if postListHeadline %}
+  <h2>
+    {{ postListHeadline }}
+  </h2>
+{% endif %}
+<div>
+  <ol class="[ post-list ] [ flow ]">
+    {% for item in postListItems %}
+      <li class="post-list__item">
+        <a href="{{ item.url }}" class="post-list__link">{{ item.data.title }}</a>
+      </li>
+    {% endfor %}
+  </ol>
+</div>
