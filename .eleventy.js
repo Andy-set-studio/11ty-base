@@ -11,9 +11,6 @@ module.exports = config => {
   config.addFilter('dateFilter', dateFilter);
   config.addFilter('w3DateFilter', w3DateFilter);
 
-  // Set directories to pass through to the dist folder
-  config.addPassthroughCopy('./src/images/');
-
   // Plugins
   config.addPlugin(rssPlugin);
 
