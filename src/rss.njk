@@ -1,11 +1,11 @@
 ---
-title: 'Issue 33 Blog'
+title: 'posts'
 summary: 'A feed of the latest posts from our blog.'
 permalink: '/feed.xml'
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ title }}</title>
+  <title>{{ site.name }} {{ title }}</title>
 	<subtitle>{{ summary }}</subtitle>
 	<link href="{{ site.url }}{{ permalink }}" rel="self"/>
 	<link href="{{ site.url }}/"/>
