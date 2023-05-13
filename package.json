@@ -12,15 +12,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-cache-assets": "^2.3.0",
-    "@11ty/eleventy-plugin-rss": "^1.1.2",
-    "concurrently": "^7.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "concurrently": "^8.0.1",
     "gorko": "^0.9.1",
-    "moment": "^2.29.1",
-    "sass": "^1.48.0"
+    "moment": "^2.29.4",
+    "sass": "^1.62.1"
   },
   "devDependencies": {
-    "prettier": "^2.2.1"
+    "prettier": "^2.8.8"
   }
 }
